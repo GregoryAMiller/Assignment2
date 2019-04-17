@@ -1,11 +1,11 @@
+// Gregory Miller
+// Section 2
 #include "person.h"
 
-Person::Person() {
-    firstName = "";
-    lastName = "";
-    payRate = 0;
-    hoursWorked = 0;
-}
+Person::Person(string fName, string lName, float rate, float hours)
+  : firstName(fName), lastName(lName), payRate(rate), hoursWorked(hours)
+    {}
+
 string Person::getFirstName() {
     return firstName;
 }
@@ -18,12 +18,6 @@ float Person::getPayRate() {
 float Person::getHoursWorked() {
     return hoursWorked;
 }
-string Person::fullName() {
-    return firstName + " " + lastName;
-}
-float Person::totalPay() {
-    return payRate * hoursWorked;
-}
 void Person::setFirstName(string fname) {
     firstName = fname;
 }
@@ -35,4 +29,10 @@ void Person::setPayRate(float rate) {
 }
 void Person::setHoursWorked(float hours) {
     hoursWorked = hours;
+}
+string Person::fullName() {
+    return firstName + " " + lastName;
+}
+float Person::totalPay() {
+    return payRate * hoursWorked;
 }
